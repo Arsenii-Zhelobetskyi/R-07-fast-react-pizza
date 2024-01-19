@@ -9,6 +9,8 @@ import CreateOrder, {
 import Order, { loader as orderLoader } from "./features/order/Order.jsx";
 import AppLayout from "./features/ui/AppLayout.jsx";
 import Error from "./features/ui/Error.jsx";
+
+import { action as updateOrderAction } from "./features/order/UpdateOrder.jsx";
 const router = createBrowserRouter([
   //use this way of defining routes to use all cool NEW features of react-router-dom
   {
@@ -35,6 +37,7 @@ const router = createBrowserRouter([
         element: <Order />,
         loader: orderLoader,
         errorElement: <Error />,
+        action: updateOrderAction,
       },
     ],
   },
